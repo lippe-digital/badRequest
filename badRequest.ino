@@ -111,7 +111,7 @@ void loop() {
   BearSSL::WiFiClientSecure *bear = new BearSSL::WiFiClientSecure();
   // Integrate the cert store with this connection
   bear->setCertStore(&certStore);
-  post(bear, site.c_str(), 443, "/gotify/message?token=TokenID");
+  post("myDomain", 443, "/gotify/message?token=TokenID");
   delete bear;
   delay(30000);
 }
